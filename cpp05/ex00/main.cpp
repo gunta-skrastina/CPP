@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:03:58 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/13 14:59:28 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/13 17:56:46 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,5 @@ int main(void)
     {
         std::cout << "Exception: "<< error << std::endl;
     }
-    
-    
     return (0);
 }

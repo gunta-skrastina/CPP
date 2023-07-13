@@ -6,13 +6,14 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:31:33 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/13 17:33:40 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/13 18:20:51 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
+#include <string>
 #include <iostream>
 class Bureaucrat;
 #include "Form.hpp"
@@ -34,7 +35,7 @@ public:
     void increment(void);
     void decrement(void);
     void signForm(Form form);
-    void executeForm(Form const &form);
+    void executeForm(Form const & form);
 };
 
 std::ostream& operator<<(std::ostream& os, Bureaucrat& bureaucrat);

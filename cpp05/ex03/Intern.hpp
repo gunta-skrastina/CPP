@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 13:43:25 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/13 14:35:11 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/13 18:33:25 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 class Intern
 {
 public:
-    Intern(/* args */);
+    Intern();
     Intern(const Intern& intern);
     Intern& operator=(const Intern& intern);
     ~Intern();

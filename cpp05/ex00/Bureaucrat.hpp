@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:31:33 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/13 14:57:37 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/13 17:56:34 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 #include <iostream>
 
 class Bureaucrat
-
 {
 private:
     const std::string _name;
@@ -30,6 +29,7 @@ public:
     
     std::string getName(void) const;
     int getGrade(void) const;
+    
     void increment(void);
     void decrement(void);
 };

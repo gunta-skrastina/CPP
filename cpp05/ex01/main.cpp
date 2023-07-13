@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:03:58 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/13 17:19:49 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/13 18:11:52 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int main(void)
     try {
         Form form3("form 3", 40, 30);
         Bureaucrat jane("Jane", 3);
+        jane.signForm(form3);
         form3.beSigned(jane);
         jane.signForm(form3);
     }
@@ -51,6 +52,5 @@ int main(void)
     {
         std::cout << "Exception: "<< error << std::endl;
     }
-    
     return (0);
 }

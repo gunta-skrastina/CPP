@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 08:23:32 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/13 17:32:59 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/13 18:15:25 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ public:
     int getGradeToExec() const;
 
     void beSigned(Bureaucrat bureaucrat);
-    virtual void execute(Bureaucrat const &executor) const = 0;
+
+    virtual void execute(Bureaucrat const & executor) const = 0;
 };
 
 std::ostream& operator<<(std::ostream& os, Form& form);

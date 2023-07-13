@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:53:19 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/13 17:24:08 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/13 18:25:26 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,16 +64,34 @@ void Bureaucrat::decrement(void)
     std::cout << *this << std::endl;
 }
 
+void Bureaucrat::signForm(Form form)
+{
+    if (form.getIsSigned())
+        std::cout << getName() << " cannot sign the " << form.getName() << " because it's already signed" << std::endl;
+    else if (form.getGradeToSign() < getGrade())
+        std::cout << getName() << " cannot sign the " << form.getName() << " because the grade is too low" << std::endl;
+    else
+    {
+        form.beSigned(*this);
+        std::cout << getName() << " signed " << form.getName() << std::endl;
+    }
+}
+
+void Bureaucrat::executeForm(Form const & form)
+{
+    if (!form.getIsSigned())
+        std::cout << getName() << "cannot execute the " << form.getName() << " because it's not sigened" << std::endl;
+    else if (getGrade() > form.getGradeToExec())
+        std::cout << getName() << " cannot execute the " << form.getName() << " because the grade is too low" << std::endl;
+    else
+    {
+        form.execute(*this);
+        std::cout << getName() << " executed " << form.getName() << std::endl;
+    }
+}
+
 std::ostream& operator<<(std::ostream& os, Bureaucrat& bureaucrat)
 {
     os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
     return (os);
-}
-
-void Bureaucrat::signForm(Form form)
-{
-    if (form.getIsSigned())
-        std::cout << this->getName() << " signed " << form.getName() << std::endl;
-    else
-        std::cout << this->getName() << " coudldn't sign " << form.getName() << " because his grade is too low" << std::endl;
 }

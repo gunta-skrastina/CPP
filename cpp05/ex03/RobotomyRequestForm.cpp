@@ -6,14 +6,14 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 10:03:00 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/13 14:35:11 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/13 17:47:20 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target)
-    : Form("Robotomy Request", 72, 45), _target(target)
+    : Form("robotomy request", 72, 45), _target(target)
 {
 }
 
