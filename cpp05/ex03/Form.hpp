@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AForm.hpp                                          :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 08:23:32 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/13 14:35:11 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/13 17:24:47 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define Form_HPP
 
 #include <string>
+class Form;
 #include "Bureaucrat.hpp"
 
 class Form
@@ -35,7 +36,6 @@ public:
     int getGradeToExec() const;
 
     void beSigned(Bureaucrat bureaucrat);
-    void signForm(Bureaucrat bureaucrat);
 
     virtual void execute(Bureaucrat const & executor) const = 0;
 };

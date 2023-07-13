@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:31:33 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/13 12:48:20 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/13 17:22:38 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
+class Bureaucrat;
+#include "Form.hpp"
 
 class Bureaucrat
-
 {
 private:
     const std::string _name;
@@ -29,8 +30,10 @@ public:
     
     std::string getName(void) const;
     int getGrade(void) const;
+    
     void increment(void);
     void decrement(void);
+    void signForm(Form form);
 };
 
 std::ostream& operator<<(std::ostream& os, Bureaucrat& bureaucrat);

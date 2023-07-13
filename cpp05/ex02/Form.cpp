@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 08:29:36 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/13 15:29:59 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/13 17:22:57 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,15 +66,6 @@ void Form::beSigned(Bureaucrat bureaucrat)
         _is_signed = true;
     else
         throw("Form::GradeTooLowException");
-    signForm(bureaucrat);
-}
-
-void Form::signForm(Bureaucrat bureaucrat)
-{
-    if (_is_signed)
-        std::cout << bureaucrat << " signed " << *this << std::endl;
-    else
-        std::cout << bureaucrat << " coudldn't sign " << *this << " because grade is too low" << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& os, Form& form)

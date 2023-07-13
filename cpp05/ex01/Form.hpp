@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 08:23:32 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/13 15:14:26 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/13 17:18:06 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define FORM_HPP
 
 #include <string>
+class Form;
 #include "Bureaucrat.hpp"
 
 class Form
@@ -35,7 +36,6 @@ public:
     int getGradeToExec() const;
 
     void beSigned(Bureaucrat bureaucrat);
-    void signForm(Bureaucrat bureaucrat);
 };
 
 std::ostream& operator<<(std::ostream& os, Form& form);
