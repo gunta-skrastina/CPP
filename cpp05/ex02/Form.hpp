@@ -6,12 +6,12 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 08:23:32 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/13 17:23:04 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/13 17:29:37 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef Form_HPP
-#define Form_HPP
+#ifndef FORM_HPP
+#define FORM_HPP
 
 #include <string>
 class Form;
@@ -26,8 +26,8 @@ private:
     const int _grade_to_exec;
 public:
     Form(const std::string name, const int grade_to_sign, const int grade_to_exec);
-    Form(const Form& Form);
-    Form& operator=(const Form& Form);
+    Form(const Form& form);
+    Form& operator=(const Form& form);
     ~Form();
 
     std::string getName() const;
@@ -36,11 +36,8 @@ public:
     int getGradeToExec() const;
 
     void beSigned(Bureaucrat bureaucrat);
-    void signForm(Bureaucrat bureaucrat);
-
-    virtual void execute(Bureaucrat const & executor) const = 0;
 };
 
-std::ostream& operator<<(std::ostream& os, Form& Form);
+std::ostream& operator<<(std::ostream& os, Form& form);
 
 #endif
