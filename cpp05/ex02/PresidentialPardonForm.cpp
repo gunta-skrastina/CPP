@@ -6,14 +6,14 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 10:00:24 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/13 15:27:43 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/13 17:47:25 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target)
-    : Form("PresidentialPardonForm", 25, 5), _target(target)
+    : Form("presidential pardon", 25, 5), _target(target)
 {
 }
 

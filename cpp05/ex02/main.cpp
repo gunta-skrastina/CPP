@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:03:58 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/13 17:29:01 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/13 17:44:48 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,8 @@ int main(void)
         Bureaucrat jane("Jane", 3);
         PresidentialPardonForm pardon("turkey");
         pardon.beSigned(jane);
-        jane.signForm(pardon);
+        jane.executeForm(pardon);
+        // jane.signForm(pardon);
         pardon.execute(jane);
     }
     catch(const char* error)
