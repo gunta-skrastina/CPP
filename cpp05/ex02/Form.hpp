@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 08:23:32 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/15 14:26:36 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/15 14:52:45 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ public:
     Form(const std::string name, const int grade_to_sign, const int grade_to_exec);
     Form(const Form& form);
     Form& operator=(const Form& form);
-    ~Form();
+    virtual ~Form();
 
     std::string getName() const;
     bool getIsSigned() const;

@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 13:46:01 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/15 13:20:52 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/15 14:57:14 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,23 @@ Form *Intern::makeForm(std::string form_name, std::string target)
         new RobotomyRequestForm(target),
         new ShrubberyCreationForm(target)
     };
+    int matching_index = -1;
     for (int i = 0; i < 3; i++)
     {
         if (form_name.compare(array[i]) == 0)
         {
             std::cout << "Intern creates " << form_name << " form for " << target << std::endl;
-            return (forms[i]);
+            matching_index = i;
+            break;
         }
     }
+    for (int i = 0; i < 3; i++)
+    {
+        if (i != matching_index)
+            delete (forms[i]);
+    }
+    if (matching_index != -1)
+        return (forms[matching_index]);
     std::cout << "Error Intern couldn't find a " << form_name << " form for " << target << std::endl;
     return (nullptr);
 }

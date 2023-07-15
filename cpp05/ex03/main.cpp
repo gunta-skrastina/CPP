@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:03:58 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/15 12:42:16 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/15 15:02:00 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,18 @@ int main(void)
     try 
     {
         Intern intern;
-        intern.makeForm("presidential pardon", "42");
-        intern.makeForm("robotomy request", "Bender");
-        intern.makeForm("shrubbery creation", "Home");
-        intern.makeForm("will to live", "intern");
+        Form *form1 = intern.makeForm("presidential pardon", "42");
+        if (form1 != nullptr)
+            delete form1;
+        Form *form2 = intern.makeForm("robotomy request", "Bender");
+        if (form2 != nullptr)
+            delete form2;
+        Form *form3  = intern.makeForm("shrubbery creation", "Home");
+        if (form3 != nullptr)
+            delete form3;
+        Form *form4 = intern.makeForm("will to live", "intern");
+        if (form4 != nullptr)
+            delete form4;
         
     }
     catch(std::exception &e)
