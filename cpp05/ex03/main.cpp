@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:03:58 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/13 18:34:45 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/15 12:42:16 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int main(void)
         intern.makeForm("will to live", "intern");
         
     }
-    catch(const char* error)
+    catch(std::exception &e)
     {
-        std::cout << "Exception: "<< error << std::endl;
+        std::cout << "Exception: "<< e.what() << std::endl;
     }
     return (0);
 }

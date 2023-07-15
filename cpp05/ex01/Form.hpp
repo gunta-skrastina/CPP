@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 08:23:32 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/13 17:58:43 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/15 13:16:20 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,17 @@ public:
     int getGradeToExec() const;
 
     void beSigned(Bureaucrat bureaucrat);
+
+    class GradeTooHighException : public std::exception
+    {
+      public:
+            const char * what () const throw();  
+    };
+    class GradeTooLowException : public std::exception
+    {
+      public:
+            const char * what () const throw();  
+    };
 };
 
 std::ostream& operator<<(std::ostream& os, Form& form);

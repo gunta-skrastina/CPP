@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 10:03:00 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/13 17:47:20 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/15 13:52:16 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,17 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
             std::cout << "Robotomy of "<< _target << " has failed" << std::endl;
     }
     else if (!this->getIsSigned())
-        throw("RobotomyRequestForm::NotSignedException");
+        throw(RobotomyRequestForm::NotSignedException());
     else
-        throw("RobotomyRequestForm:GradeTooLowException");
+        throw(RobotomyRequestForm::GradeTooLowException());
+}
+
+const char * RobotomyRequestForm::NotSignedException::what() const throw()
+{
+    return ("Robotomy request form is not signed");
+}
+
+const char * RobotomyRequestForm::GradeTooLowException::what() const throw()
+{
+    return ("Robotomy request form cannot be executed, the grade is too low");
 }

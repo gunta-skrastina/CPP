@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 13:46:01 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/13 18:32:42 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/15 13:20:52 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ Form *Intern::makeForm(std::string form_name, std::string target)
             return (forms[i]);
         }
     }
-    std::cout << "ERROR: Intern couldn't find a " << form_name << " form for " << target << std::endl;
+    std::cout << "Error Intern couldn't find a " << form_name << " form for " << target << std::endl;
     return (nullptr);
 }

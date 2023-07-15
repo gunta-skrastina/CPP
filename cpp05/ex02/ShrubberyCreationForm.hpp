@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 09:32:32 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/13 18:27:31 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/15 13:52:32 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,17 @@ public:
     ~ShrubberyCreationForm();
     
     virtual void execute(Bureaucrat const & executor) const;
+
+    class NotSignedException : public std::exception
+    {
+        public:
+            const char * what() const throw();
+    };
+    class GradeTooLowException : public std::exception
+    {
+        public:
+            const char * what() const throw();  
+    };
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 09:40:38 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/13 17:47:39 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/15 13:52:27 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
     {
         std::ofstream file(_target + "_shrubbery");
         if (!file)
-            throw("ShrubberyCreationForm:FailedToOpenFile");
+            return;
         file << "     *     \n";
         file << "    / \\    \n";
         file << "   /   \\   \n";
@@ -50,8 +50,18 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
         std::cout << _target << " shrubbery created" << std::endl;
     }
     else if (!this->getIsSigned())
-        throw("ShrubberyCreationForm::NotSignedException");
+        throw(ShrubberyCreationForm::NotSignedException());
     else
-        throw("ShrubberyCreationForm:GradeTooLowException");
+        throw(ShrubberyCreationForm::GradeTooLowException());
     
+}
+
+const char * ShrubberyCreationForm::NotSignedException::what() const throw()
+{
+    return ("Shrubbery creation form is not signed");
+}
+
+const char * ShrubberyCreationForm::GradeTooLowException::what() const throw()
+{
+    return ("Shrubbery creation form cannot be executed, the grade is too low");
 }

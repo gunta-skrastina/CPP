@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:03:58 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/13 17:56:46 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/15 12:30:57 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int main(void)
         julia.decrement();
         julia.decrement();
     }
-    catch(const char* error)
+    catch(std::exception &e)
     {
-        std::cout << "Exception: "<< error << std::endl;
+        std::cout << "Exception: "<< e.what() << std::endl;
     }
     try
     {
@@ -31,17 +31,17 @@ int main(void)
         jane.increment();
         jane.increment();
     }
-    catch(const char* error)
+    catch(std::exception &e)
     {
-        std::cout << "Exception: "<< error << std::endl;
+        std::cout << "Exception: "<< e.what() << std::endl;
     }
     try
     {
         Bureaucrat john("John", 160);
     }
-    catch(const char* error)
+    catch(std::exception &e)
     {
-        std::cout << "Exception: "<< error << std::endl;
+        std::cout << "Exception: "<< e.what() << std::endl;
     }
     return (0);
 }

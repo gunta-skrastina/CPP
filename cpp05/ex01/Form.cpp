@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 08:29:36 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/13 18:09:59 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/15 12:49:27 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ Form::Form(const std::string name, const int grade_to_sign, const int grade_to_e
     : _name(name), _is_signed(false), _grade_to_sign(grade_to_sign), _grade_to_exec(grade_to_exec)
 {
     if (grade_to_sign > 150)
-        throw("Form::GradeTooLowException");
+        throw(Form::GradeTooLowException());
     if (grade_to_sign < 1)
-        throw("Form::GradeTooHighException");
+        throw(Form::GradeTooHighException());
     if (grade_to_exec > 150)
-        throw("Form::GradeTooLowException");
+        throw(Form::GradeTooLowException());
     if (grade_to_exec < 1)
-        throw("Form::GradeTooHighException");
+        throw(Form::GradeTooHighException());
 }
 
 Form::Form(const Form& form)
@@ -65,7 +65,7 @@ void Form::beSigned(Bureaucrat bureaucrat)
     if (bureaucrat.getGrade() <= _grade_to_sign)
         _is_signed = true;
     else
-        throw("Form::GradeTooLowException");
+        throw(Form::GradeTooLowException());
 }
 
 std::ostream& operator<<(std::ostream& os, Form& form)
@@ -75,4 +75,14 @@ std::ostream& operator<<(std::ostream& os, Form& form)
     else
         os << "\"" << form.getName() << "\" grade to sign " << form.getGradeToSign() << ", grade to execute " << form.getGradeToExec() << ", the form is not signed ";
     return (os);
+}
+
+const char * Form::GradeTooHighException::what () const throw()
+{
+    return ("The grade is too high");
+}
+
+const char * Form::GradeTooLowException::what () const throw()
+{
+    return ("The grade is too low");
 }
