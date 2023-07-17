@@ -148,6 +148,7 @@ void ScalarConverter::convertToAll(const T& value)
     }
     else
     {
+        std::cout << std::fixed << std::setprecision(1);
         if (value > std::numeric_limits<char>::max() || value < std::numeric_limits<char>::min())
             std::cout << "char: impossible" << std::endl;
         else if (!isprint(static_cast<char>(value)))
