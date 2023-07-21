@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 12:01:15 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/20 14:23:34 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/21 19:24:40 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ public:
     void addNumber(int num);
     int shortestSpan();
     int longestSpan();
+    void addNumbers(std::vector<int> & nums);
 };
 
 #endif

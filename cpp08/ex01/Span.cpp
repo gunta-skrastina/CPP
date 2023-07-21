@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 12:01:19 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/20 14:23:50 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/21 19:39:22 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int Span::shortestSpan()
     std::vector<int> diff;
     diff.reserve(numbers.size());
     std::adjacent_difference(numbers.begin(), numbers.end(), std::back_inserter(diff));
+    diff.erase(diff.begin());
     return (*min_element(diff.begin(), diff.end()));
 }
 
@@ -64,4 +65,14 @@ int Span::longestSpan()
     if (numbers.size() <= 1)
         throw std::runtime_error("Can't find the longest Span, not enough elements.");
     return (*max_element(numbers.begin(), numbers.end()) -  *min_element(numbers.begin(), numbers.end()));  
+}
+
+void Span::addNumbers(std::vector<int>& nums)
+{
+    unsigned int availableSpace = _max_size - numbers.size();
+    if (nums.size() > availableSpace)
+    {
+        throw std::runtime_error("Not enough space to add all numbers.");
+    }
+    numbers.insert(numbers.end(), nums.begin(), nums.end());
 }
