@@ -85,7 +85,7 @@ bool BitcoinExchange::isDateValid(std::string date)
 
 void  BitcoinExchange::calculateBitcoinValue(std::string input_file)
 {
-    std::ifstream file(input_file);
+    std::ifstream file(input_file.c_str());
     if (!file.is_open())
     {
         std::cout << "Error: couldn't open input file." << std::endl;
