@@ -6,13 +6,14 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 11:46:55 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/23 08:37:53 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/23 08:41:52 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
 
 RPN::RPN(std::string input)
+    : _is_error(false)
 {
     calculate(input);
 }
@@ -106,7 +107,7 @@ void RPN::calculate(std::string input)
     }
     if (_numbers.size() == 1)
         std::cout << _numbers.top() << std::endl;
-    else
+    else if (!_is_error)
         error();
     
     while(!_numbers.empty())
@@ -116,6 +117,7 @@ void RPN::calculate(std::string input)
 void RPN::error()
 {
     std::cout << "ERROR" << std::endl;
+    _is_error = true;
     while (_numbers.size() > 0)
         _numbers.pop();
 }
