@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 15:14:07 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/23 20:28:10 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/23 20:52:10 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,41 +14,66 @@
 #include <iostream>
 #include <vector>
 #include <iomanip>
+#include <sstream>
 
-int main()
+bool isValid(const std::string& str)
 {
-    int arr[] = {12, 11, 13, 5, 6, 7};
-    int n = sizeof(arr) / sizeof(arr[0]);
+    if (str.empty())
+        return (false);
+    std::istringstream iss(str);
+    int num;
+    if (!(iss >> num))
+        return false;
+    return (iss.rdbuf()->in_avail() == 0) && (num > 0);
+}
 
-    std::cout << "Before: ";
-    for (int i = 0; i < n; ++i)
+int main(int argc, char *argv[])
+{
+    if (argc < 2)
     {
-        std::cout << arr[i] << " ";
+        std::cout << "Wrong argument count." << std::endl;
+        return (1);
+    }
+    std::vector<int>nums;
+    for (int i = 1; i < argc; ++i)
+    {
+        if (isValid(argv[i]))
+            nums.push_back(atoi(argv[i]));
+        else
+        {
+            std::cout << "Invalid integer." << std::endl;
+            return (1);
+        }
+    }
+    
+    std::cout << "Before: ";
+    for (unsigned int i = 0; i < nums.size(); ++i)
+    {
+        std::cout << nums[i] << " ";
     }
     std::cout << std::endl;
 
-    std::vector<int> vec(arr, arr + n);
-    PmergeMe pm(vec);
-    const std::vector<int>& sortedVector = pm.getSortedVec();
+    PmergeMe pm(nums);
+    const std::vector<int>& sortedVec = pm.getSortedVec();
 
     std::cout << "After std::vector: ";
-    for (int i = 0; i < n; ++i)
+    for (unsigned int i = 0; i < sortedVec.size(); ++i)
     {
-        std::cout << sortedVector[i] << " ";
+        std::cout << sortedVec[i] << " ";
     }
     std::cout << std::endl;
 
     const std::deque<int>& sortedDeq = pm.getSortedDeq();
     std::cout << "After std::deque: ";
-    for (int i = 0; i < n; ++i)
+    for (unsigned int i = 0; i < sortedDeq.size(); ++i)
     {
         std::cout << sortedDeq[i] << " ";
     }
     std::cout << std::endl;
 
     std::cout << std::setprecision(6) << std::fixed;
-    std::cout << "Time to process a range of " << n << " elements with std::vector : " << pm.getVecTime() << " us" << std::endl;
-    std::cout << "Time to process a range of " << n << " elements with std::vector : " << pm.getDeqTime() << " us" << std::endl;
+    std::cout << "Time to process a range of " << nums.size() << " elements with std::vector : " << pm.getVecTime() << " us" << std::endl;
+    std::cout << "Time to process a range of " << nums.size() << " elements with std::vector : " << pm.getDeqTime() << " us" << std::endl;
     return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 15:12:26 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/23 20:29:34 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/23 20:31:10 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ PmergeMe::PmergeMe(std::vector<int> array)
 }
 
 PmergeMe::PmergeMe(const PmergeMe & other)
-    : _vec(other._vec)
+    : _vec(other._vec), _deq(other._deq)
 {
 }
 
@@ -36,6 +36,7 @@ PmergeMe & PmergeMe::operator=(const PmergeMe & other)
     if (this != & other)
     {
         this->_vec = other._vec;
+        this->_deq = other._deq;
     }
     return (*this);
 }
