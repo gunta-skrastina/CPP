@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 11:46:55 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/23 08:31:07 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/23 08:37:53 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,8 +104,13 @@ void RPN::calculate(std::string input)
             }
         }
     }
-    if (!_numbers.empty())
+    if (_numbers.size() == 1)
         std::cout << _numbers.top() << std::endl;
+    else
+        error();
+    
+    while(!_numbers.empty())
+        _numbers.pop();
 }
 
 void RPN::error()
