@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 15:14:07 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/23 20:05:15 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/23 20:28:10 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,18 @@ int main()
     PmergeMe pm(vec);
     const std::vector<int>& sortedVector = pm.getSortedVec();
 
-    std::cout << "After: ";
+    std::cout << "After std::vector: ";
     for (int i = 0; i < n; ++i)
     {
         std::cout << sortedVector[i] << " ";
+    }
+    std::cout << std::endl;
+
+    const std::deque<int>& sortedDeq = pm.getSortedDeq();
+    std::cout << "After std::deque: ";
+    for (int i = 0; i < n; ++i)
+    {
+        std::cout << sortedDeq[i] << " ";
     }
     std::cout << std::endl;
 

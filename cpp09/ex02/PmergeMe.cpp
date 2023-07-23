@@ -6,14 +6,14 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 15:12:26 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/23 20:04:39 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/23 20:29:34 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
 PmergeMe::PmergeMe(std::vector<int> array)
-    : _vec(array)
+    : _vec(array), _deq(array.begin(), array.end())
 {
     clock_t start = clock();
     fordJohnsonMergeSort(_vec, 0, _vec.size() -  1);
