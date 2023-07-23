@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 11:46:55 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/23 08:41:52 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/23 14:35:07 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,13 @@ void RPN::calculate(std::string input)
 
     if (input.find(32) == std::string::npos)
     {
-        error();
+        unsigned int i = 0;
+        while (isdigit(input[i]))
+            i++;
+        if (i < input.size())
+            error();
+        else
+            std::cout << input << std::endl;
         return;
     }
 
