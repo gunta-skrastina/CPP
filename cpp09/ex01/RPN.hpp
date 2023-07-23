@@ -17,6 +17,7 @@
 # include <string>
 # include <iostream>
 # include <sstream>
+# include <cstdlib>
 
 class RPN
 {
