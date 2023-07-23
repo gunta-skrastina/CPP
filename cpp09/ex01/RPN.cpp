@@ -61,7 +61,7 @@ void RPN::calculate(std::string input)
         
         if (isNumeric)
         {
-            int num = std::atoi(token.c_str());
+            int num = atoi(token.c_str());
             _numbers.push(num);
         }
         else
