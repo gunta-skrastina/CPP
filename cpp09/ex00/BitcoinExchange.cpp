@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 10:29:15 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/23 14:13:11 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/24 13:28:45 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,8 @@ bool BitcoinExchange::isDateValid(std::string date)
     {
         int year = tm_date.tm_year + 1900;
         int month = tm_date.tm_mon + 1;
-        if ((year >= 2009 && month >= 1 && tm_date.tm_mday >= 2) ||
-            (year > 109 && month >= 0 && tm_date.tm_mday >= 0))
+        if (year >= 2009 && month >= 1 && tm_date.tm_mday >= 2
+            && (year <= 2022 && month <= 03 && tm_date.tm_mday <= 29))
             return (true);
     }
     return (false);
@@ -115,10 +115,8 @@ void  BitcoinExchange::calculateBitcoinValue(std::string input_file)
                 {
                     std::string closest_date;
                     std::map<std::string, double>::iterator it = _exchange_rate.begin();
-                    while (it->first <= date_str)
-                    {
+                    while (it->first <= date_str && it != _exchange_rate.end())
                         ++it;
-                    }
                     --it;
                     std::cout << date_str << " => " << value << " = " << it->second * value << std::endl; 
                 }
