@@ -6,7 +6,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic-errors
 
 NAME = PmergeMe
 
-SRC = main.cpp
+SRC = main.cpp PmergeMe.cpp
 
 all: $(NAME)
 
