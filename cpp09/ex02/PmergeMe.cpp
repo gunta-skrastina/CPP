@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 15:12:26 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/24 08:31:07 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/24 12:00:28 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,15 +136,19 @@ void PmergeMe::fordJohnsonMergeSort(Container& arr, int left, int right)
     }
 }
 
-bool PmergeMe::isValidInt(const std::string& str)
+int PmergeMe::convertToInt(const std::string& str)
 {
     if (str.empty())
         return (false);
     std::istringstream iss(str);
     int num;
-    if (!(iss >> num))
-        return false;
-    return (iss.rdbuf()->in_avail() == 0) && (num > 0);
+    if ((iss >> num) && iss.eof() && num >= 0)
+        return (num);
+    else
+    {
+        std::cout << "ERROR" << std::endl;
+        exit(1);
+    }
 }
 
 void PmergeMe::convertToVec(char *input[])
@@ -152,13 +156,7 @@ void PmergeMe::convertToVec(char *input[])
     int i = 0;
     while (input[i])
     {
-        if (isValidInt(input[i]))
-            _vec.push_back(atoi(input[i]));
-        else
-        {
-            std::cout << "Invalid integer." << std::endl;
-            exit(1);
-        }
+        _vec.push_back(convertToInt(input[i]));
         i++;
     }
 }
@@ -168,13 +166,7 @@ void PmergeMe::convertToDeq(char *input[])
     int i = 0;
     while (input[i])
     {
-        if (isValidInt(input[i]))
-            _deq.push_back(atoi(input[i]));
-        else
-        {
-            std::cout << "Invalid integer." << std::endl;
-            exit(1);
-        }
+        _deq.push_back(convertToInt(input[i]));
         i++;
     }
 }

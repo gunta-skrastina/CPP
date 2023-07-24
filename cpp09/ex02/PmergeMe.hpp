@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 15:12:01 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/24 08:31:21 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/24 12:00:39 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <vector>
 # include <deque>
 # include <iostream>
-# include <cstdlib>
 # include <sstream>
 # include <iomanip>
 
@@ -33,7 +32,7 @@ private:
     void mergeSortedSubarrays(Container& arr, int left, int mid, int right);
     template <typename Container>
     void fordJohnsonMergeSort(Container& arr, int left, int right);
-    bool isValidInt(const std::string& str);
+    int convertToInt(const std::string& str);
     void convertToVec(char *input[]);
     void convertToDeq(char *input[]);
     template <typename Container>
