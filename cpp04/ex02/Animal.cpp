@@ -13,21 +13,21 @@
 #include "Animal.hpp"
 
 Animal::Animal()
+	: type("Animal")
 {
 	std::cout << "Animal constructor called" << std::endl;
-	this->type = "Animal";
 }
 
-Animal::Animal(const Animal& animal)
+Animal::Animal(const Animal& other)
+	: type(other.animal)
 {
 	std::cout << "Animal copy constructor called" << std::endl;
-	this->type = animal.type;
 }
 
-Animal& Animal::operator=(const Animal& animal)
+Animal& Animal::operator=(const Animal& other)
 {
-	std::cout << "Animal copy assignement constructor called" << std::endl;
-	this->type = animal.type;
+	std::cout << "Animal copy assignement operator called" << std::endl;
+	type = animal.type;
 	return (*this);
 }
 
@@ -43,5 +43,5 @@ Animal::~Animal()
 
 std::string Animal::getType() const
 {
-	return (this->type);
+	return (type);
 }
