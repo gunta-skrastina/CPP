@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gskrasti <gskrasti@students.42wolfsburg    +#+  +:+       +#+        */
+/*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 10:08:41 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/04/14 10:23:36 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/25 19:42:37 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@ protected:
     std::string type;
 public:
     WrongAnimal();
+    WrongAnimal(const WrongAnimal & other);
+    WrongAnimal & operator=(const WrongAnimal & other);
     virtual ~WrongAnimal();
 
     std::string getType() const;
-    virtual void makeSound() const;
+    void makeSound() const;
 };
 
 #endif

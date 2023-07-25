@@ -6,7 +6,7 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 09:29:39 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/25 19:30:06 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/25 19:37:45 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 
 Animal::Animal()
 	: type("Animal")
-{
-	std::cout << "Animal constructor called" << std::endl;
-}
-
-Animal::Animal(std::string type)
-	: type(type)
 {
 	std::cout << "Animal constructor called" << std::endl;
 }

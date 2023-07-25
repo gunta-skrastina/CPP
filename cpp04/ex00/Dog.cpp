@@ -6,21 +6,21 @@
 /*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 09:39:04 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/07/25 19:30:30 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/25 19:41:34 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
 Dog::Dog()
-	: Animal("Dog")
 {
+	this->type = "Dog";
 	std::cout << "Dog constructor called" << std::endl;
 }
 
 Dog::Dog(const Dog & other)
-	: Animal(other.type)
 {
+	type = other.type;
 	std::cout << "Dog copy constructor called" << std::endl;
 }
 
