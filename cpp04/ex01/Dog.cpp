@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gskrasti <gskrasti@students.42wolfsburg    +#+  +:+       +#+        */
+/*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 09:39:04 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/04/14 15:58:56 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/25 19:55:30 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,22 @@
 Dog::Dog()
 {
 	std::cout << "Dog constructor called" << std::endl;
-	this->type = "Dog";
-	this->brain = new Brain();
+	type = "Dog";
+	brain = new Brain();
 }
 
-Dog::Dog(const Dog& dog)
+Dog::Dog(const Dog& other)
 {
 	std::cout << "Dog copy constructor called" << std::endl;
-	this->type = dog.type;
-	this->brain = new Brain(*(dog.brain));
+	type = other.type;
+	brain = new Brain(*(other.brain));
 }
 
-Dog& Dog::operator=(const Dog& dog)
+Dog& Dog::operator=(const Dog& other)
 {
-	std::cout << "Dog copy assignement constructor called" << std::endl;
-	this->type = dog.type;
-	this->brain = new Brain(*(dog.brain));
+	std::cout << "Dog copy assignement operator called" << std::endl;
+	type = other.type;
+	brain = new Brain(*(other.brain));
 	return (*this);
 }
 
@@ -42,5 +42,5 @@ Dog::~Dog()
 
 void Dog::makeSound() const
 {
-	std::cout << this->type << " says Woof" << std::endl;
+	std::cout << type << " says Woof" << std::endl;
 }

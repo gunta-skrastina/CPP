@@ -3,31 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gskrasti <gskrasti@students.42wolfsburg    +#+  +:+       +#+        */
+/*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 09:29:39 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/04/14 15:58:38 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/25 20:00:15 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
 Animal::Animal()
+	: type("Animal")
 {
 	std::cout << "Animal constructor called" << std::endl;
-	this->type = "Animal";
 }
 
-Animal::Animal(const Animal& animal)
+Animal::Animal(const Animal& other)
+	: type(other.type)
 {
 	std::cout << "Animal copy constructor called" << std::endl;
-	this->type = animal.type;
 }
 
-Animal& Animal::operator=(const Animal& animal)
+Animal& Animal::operator=(const Animal& other)
 {
-	std::cout << "Animal copy assignement constructor called" << std::endl;
-	this->type = animal.type;
+	std::cout << "Animal copy assignement operator called" << std::endl;
+	if (this != & other)
+		type = other.type;
 	return (*this);
 }
 
