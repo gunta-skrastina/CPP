@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gskrasti <gskrasti@students.42wolfsburg    +#+  +:+       +#+        */
+/*   By: gskrasti <gskrasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 09:27:40 by gskrasti          #+#    #+#             */
-/*   Updated: 2023/04/14 10:29:21 by gskrasti         ###   ########.fr       */
+/*   Updated: 2023/07/25 19:18:04 by gskrasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ protected:
     std::string type;
 public:
     Animal();
-    Animal(const Animal& animal);
-	Animal& operator=(const Animal& animal);
+    Animal(std::string type);
+    Animal(const Animal& other);
+	Animal& operator=(const Animal& other);
     virtual ~Animal();
     
     virtual void makeSound() const;
