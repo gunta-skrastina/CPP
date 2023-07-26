@@ -1,0 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gskrasti <gskrasti@students.42wolfsburg    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/28 16:00:23 by gskrasti          #+#    #+#             */
+/*   Updated: 2023/04/04 14:24:15 by gskrasti         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
+
+# include <iostream>
+
+class Zombie
+{
+private:
+   std::string _name;
+public:
+    Zombie();
+    Zombie(std::string name);
+    ~Zombie();
+    
+    void announce(void);
+    std::string getName() const;
+    void setName(std::string name);
+};
+
+Zombie *zombieHorde(int N, std::string name);
+
+#endif
